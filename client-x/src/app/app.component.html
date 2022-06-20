@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <span>
+    <h1>Weather</h1>
+  </span>
+</mat-toolbar>
+<div>
+  <mat-spinner *ngIf="busy"></mat-spinner>
+  <div *ngIf="error">{{error.message}}</div>
+  <div *ngIf="weather">
+    
+      <time>
+        {{lastUpdated | date: 'medium'}}
+      </time>
+    
+    <h2 class="flex">
+      <img [src]="weather.current.condition.icon" />
+      {{weather.current.condition.text}}
+    </h2>
+
+  </div>
+</div>
